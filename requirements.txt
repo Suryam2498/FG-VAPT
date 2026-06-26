@@ -1,0 +1,5 @@
+flask>=2.3.0
+gtts>=2.3.0
+requests>=2.31.0
+psutil>=5.9.0
+wafw00f>=2.2.0
