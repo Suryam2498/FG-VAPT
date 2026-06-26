@@ -1,0 +1,42 @@
+{
+  "id": "20260626_172841_web_headers_google_com",
+  "tool": "web_headers",
+  "tool_display": "HTTP Header Audit",
+  "target": "google.com",
+  "output": "HTTP/1.1 301 Moved Permanently\nLocation: https://www.google.com/\nContent-Type: text/html; charset=UTF-8\nContent-Security-Policy-Report-Only: object-src 'none';base-uri 'self';script-src 'nonce-dg66jvo2R6ON2dNRu4Dfug' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp\nDate: Fri, 26 Jun 2026 11:57:57 GMT\nExpires: Sun, 26 Jul 2026 11:57:57 GMT\nCache-Control: public, max-age=2592000\nServer: gws\nContent-Length: 220\nX-XSS-Protection: 0\nX-Frame-Options: SAMEORIGIN\nAlt-Svc: h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000\n\nMISSING SECURITY HEADERS:\n  MISSING: Strict-Transport-Security\n  MISSING: X-Content-Type-Options",
+  "ports": [],
+  "threats": [
+    {
+      "name": "Missing X-Frame-Options",
+      "severity": "MEDIUM",
+      "desc": "Clickjacking attacks possible without this header.",
+      "fix": "Add header: X-Frame-Options: SAMEORIGIN"
+    },
+    {
+      "name": "Missing CSP Header",
+      "severity": "MEDIUM",
+      "desc": "No Content-Security-Policy header. XSS attacks enabled.",
+      "fix": "Add header: Content-Security-Policy: default-src self"
+    },
+    {
+      "name": "Missing HSTS",
+      "severity": "MEDIUM",
+      "desc": "No HSTS header. HTTP downgrade attacks possible.",
+      "fix": "Add header: Strict-Transport-Security: max-age=31536000"
+    },
+    {
+      "name": "Missing X-XSS-Protection",
+      "severity": "LOW",
+      "desc": "XSS protection header not configured.",
+      "fix": "Add header: X-XSS-Protection: 1; mode=block"
+    },
+    {
+      "name": "Missing X-Content-Type-Options",
+      "severity": "LOW",
+      "desc": "MIME sniffing not disabled.",
+      "fix": "Add header: X-Content-Type-Options: nosniff"
+    }
+  ],
+  "timestamp": "2026-06-26 17:28:41",
+  "saved_at": "2026-06-26T17:28:41.351035"
+}

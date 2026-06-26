@@ -1,0 +1,11 @@
+{
+  "id": "20260626_172159_nmap_quick_google_com",
+  "tool": "nmap_quick",
+  "tool_display": "Port Scanner (Quick)",
+  "target": "google.com",
+  "output": "Required tool not installed or not available in PATH: nmap\nInstall it first, or run this project in Kali Linux / WSL for full tool support.\n\nCommand:\nnmap -Pn -T4 -F --open google.com",
+  "ports": [],
+  "threats": [],
+  "timestamp": "2026-06-26 17:21:59",
+  "saved_at": "2026-06-26T17:21:59.948582"
+}

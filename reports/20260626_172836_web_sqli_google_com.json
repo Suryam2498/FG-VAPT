@@ -1,0 +1,11 @@
+{
+  "id": "20260626_172836_web_sqli_google_com",
+  "tool": "web_sqli",
+  "tool_display": "SQL Injection Test",
+  "target": "google.com",
+  "output": "This scan command is written for Kali/Linux shell tools and is not supported in native Windows.\nRecommended: run this project in Kali Linux or WSL, or install equivalent Windows tools and adapt the command.\n\nCommand:\nsqlmap -u https://google.com --batch --level=1 --risk=1 --forms --crawl=1 --random-agent 2>/dev/null | tail -40",
+  "ports": [],
+  "threats": [],
+  "timestamp": "2026-06-26 17:28:36",
+  "saved_at": "2026-06-26T17:28:36.633377"
+}

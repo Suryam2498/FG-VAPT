@@ -1,0 +1,11 @@
+{
+  "id": "20260626_172851_web_cms_google_com",
+  "tool": "web_cms",
+  "tool_display": "CMS Detection",
+  "target": "google.com",
+  "output": "This scan command is written for Kali/Linux shell tools and is not supported in native Windows.\nRecommended: run this project in Kali Linux or WSL, or install equivalent Windows tools and adapt the command.\n\nCommand:\nwhatweb -v https://google.com 2>/dev/null",
+  "ports": [],
+  "threats": [],
+  "timestamp": "2026-06-26 17:28:51",
+  "saved_at": "2026-06-26T17:28:51.127758"
+}

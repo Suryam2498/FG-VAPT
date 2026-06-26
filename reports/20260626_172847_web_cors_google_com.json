@@ -1,0 +1,42 @@
+{
+  "id": "20260626_172847_web_cors_google_com",
+  "tool": "web_cors",
+  "tool_display": "CORS Check",
+  "target": "google.com",
+  "output": "HTTP/1.1 301 Moved Permanently\nLocation: https://www.google.com/\nContent-Type: text/html; charset=UTF-8\nContent-Security-Policy-Report-Only: object-src 'none';base-uri 'self';script-src 'nonce-VYKozR-UrQZ8zOG1HPkzaQ' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp\nDate: Fri, 26 Jun 2026 11:58:02 GMT\nExpires: Sun, 26 Jul 2026 11:58:02 GMT\nCache-Control: public, max-age=2592000\nServer: gws\nContent-Length: 220\nX-XSS-Protection: 0\nX-Frame-Options: SAMEORIGIN\nAlt-Svc: h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000\n\n[SIMULATION MODE] nmap not installed \u2014 showing simulated output.\n\nStarting Nmap 7.92 ( https://nmap.org ) \u2014 SIMULATION MODE\nNmap scan report for google.com\nHost is up (0.028s latency).\nNot shown: 994 closed ports\nPORT      STATE    SERVICE              VERSION\n3389/tcp   filtered ms-wbt-server        ms-wbt-server\n8443/tcp   open     https-alt            https-alt\n80/tcp   open     http                 nginx 1.18.0\n110/tcp   filtered pop3                 pop3\n6379/tcp   open     redis                Redis key-value store\n22/tcp   open     ssh                  OpenSSH 8.4p1\n\nOS details: Linux 4.15 - 5.6\nNmap done: 1 IP address (1 host up) scanned in 16.53 seconds\n\nNo obvious CORS misconfigurations detected.",
+  "ports": [],
+  "threats": [
+    {
+      "name": "Missing X-Frame-Options",
+      "severity": "MEDIUM",
+      "desc": "Clickjacking attacks possible without this header.",
+      "fix": "Add header: X-Frame-Options: SAMEORIGIN"
+    },
+    {
+      "name": "Missing CSP Header",
+      "severity": "MEDIUM",
+      "desc": "No Content-Security-Policy header. XSS attacks enabled.",
+      "fix": "Add header: Content-Security-Policy: default-src self"
+    },
+    {
+      "name": "Missing HSTS",
+      "severity": "MEDIUM",
+      "desc": "No HSTS header. HTTP downgrade attacks possible.",
+      "fix": "Add header: Strict-Transport-Security: max-age=31536000"
+    },
+    {
+      "name": "Missing X-XSS-Protection",
+      "severity": "LOW",
+      "desc": "XSS protection header not configured.",
+      "fix": "Add header: X-XSS-Protection: 1; mode=block"
+    },
+    {
+      "name": "Missing X-Content-Type-Options",
+      "severity": "LOW",
+      "desc": "MIME sniffing not disabled.",
+      "fix": "Add header: X-Content-Type-Options: nosniff"
+    }
+  ],
+  "timestamp": "2026-06-26 17:28:47",
+  "saved_at": "2026-06-26T17:28:47.008798"
+}

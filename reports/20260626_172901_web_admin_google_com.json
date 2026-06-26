@@ -1,0 +1,11 @@
+{
+  "id": "20260626_172901_web_admin_google_com",
+  "tool": "web_admin",
+  "tool_display": "Admin Panel Finder",
+  "target": "google.com",
+  "output": "No admin panels found at common paths.",
+  "ports": [],
+  "threats": [],
+  "timestamp": "2026-06-26 17:29:01",
+  "saved_at": "2026-06-26T17:29:01.488431"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "20260626_172837_web_xss_google_com",
+  "tool": "web_xss",
+  "tool_display": "XSS Scanner",
+  "target": "google.com",
+  "output": "[SIMULATION MODE] nmap not installed \u2014 showing simulated output.\n\nStarting Nmap 7.92 ( https://nmap.org ) \u2014 SIMULATION MODE\nNmap scan report for google.com\nHost is up (0.028s latency).\nNot shown: 992 closed ports\nPORT      STATE    SERVICE              VERSION\n143/tcp   filtered imap                 imap\n22/tcp   open     ssh                  OpenSSH 8.4p1\n5432/tcp   open     postgresql           PostgreSQL 13.4\n8080/tcp   open     http-proxy           Apache Tomcat 9.0\n25/tcp   open     smtp                 Postfix smtpd\n80/tcp   open     http                 nginx 1.18.0\n3389/tcp   filtered ms-wbt-server        ms-wbt-server\n445/tcp   filtered microsoft-ds         microsoft-ds\n\nOS details: Linux 5.4 (Ubuntu)\nNmap done: 1 IP address (1 host up) scanned in 23.21 seconds\n\nThis scan command is written for Kali/Linux shell tools and is not supported in native Windows.\nRecommended: run this project in Kali Linux or WSL, or install equivalent Windows tools and adapt the command.\n\nCommand:\ncurl -sk --max-time 10 'https://google.com?q=<script>alert(1)</script>' | grep -i 'script' | head -5\n\nManual XSS Test Payloads:\n  Basic: <script>alert('XSS')</script>\n  Image: <img src=x onerror=alert(1)>\n  SVG: <svg onload=alert(1)>\n  URL Encode: %3Cscript%3Ealert(1)%3C/script%3E",
+  "ports": [],
+  "threats": [],
+  "timestamp": "2026-06-26 17:28:37",
+  "saved_at": "2026-06-26T17:28:37.341858"
+}

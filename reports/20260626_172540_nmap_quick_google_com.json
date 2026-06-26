@@ -1,0 +1,39 @@
+{
+  "id": "20260626_172540_nmap_quick_google_com",
+  "tool": "nmap_quick",
+  "tool_display": "Port Scanner (Quick)",
+  "target": "google.com",
+  "output": "[SIMULATION MODE] nmap not installed \u2014 showing simulated output.\n\nStarting Nmap 7.92 ( https://nmap.org ) \u2014 SIMULATION MODE\nNmap scan report for google.com\nHost is up (0.028s latency).\nNot shown: 996 closed ports\nPORT      STATE    SERVICE              VERSION\n445/tcp   filtered microsoft-ds         microsoft-ds\n25/tcp   open     smtp                 Postfix smtpd\n8080/tcp   open     http-proxy           Apache Tomcat 9.0\n21/tcp   open     ftp                  vsftpd 3.0.3\n\nOS details: Windows Server 2019\nNmap done: 1 IP address (1 host up) scanned in 9.17 seconds",
+  "ports": [
+    {
+      "port": 25,
+      "proto": "tcp",
+      "service": "SMTP",
+      "severity": "MEDIUM",
+      "desc": "Mail server. Open relay risk if misconfigured.",
+      "fix": "Require SMTP auth. Use TLS. Restrict relay.",
+      "version": "Postfix smtpd"
+    },
+    {
+      "port": 8080,
+      "proto": "tcp",
+      "service": "HTTP-ALT",
+      "severity": "MEDIUM",
+      "desc": "Alternate HTTP. Check for admin panels.",
+      "fix": "Secure web app. Use HTTPS.",
+      "version": "Apache Tomcat 9.0"
+    },
+    {
+      "port": 21,
+      "proto": "tcp",
+      "service": "FTP",
+      "severity": "HIGH",
+      "desc": "FTP control port. Credentials in plain text. Anonymous login risk.",
+      "fix": "Switch to SFTP. Check anonymous access with nmap --script ftp-anon",
+      "version": "vsftpd 3.0.3"
+    }
+  ],
+  "threats": [],
+  "timestamp": "2026-06-26 17:25:40",
+  "saved_at": "2026-06-26T17:25:40.033656"
+}

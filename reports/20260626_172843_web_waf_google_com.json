@@ -1,0 +1,11 @@
+{
+  "id": "20260626_172843_web_waf_google_com",
+  "tool": "web_waf",
+  "tool_display": "WAF Detection",
+  "target": "google.com",
+  "output": "This scan command is written for Kali/Linux shell tools and is not supported in native Windows.\nRecommended: run this project in Kali Linux or WSL, or install equivalent Windows tools and adapt the command.\n\nCommand:\nwafw00f https://google.com 2>/dev/null",
+  "ports": [],
+  "threats": [],
+  "timestamp": "2026-06-26 17:28:43",
+  "saved_at": "2026-06-26T17:28:43.859625"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "20260626_172842_web_ssl_google_com",
+  "tool": "web_ssl",
+  "tool_display": "SSL/TLS Analysis",
+  "target": "google.com",
+  "output": "This scan command is written for Kali/Linux shell tools and is not supported in native Windows.\nRecommended: run this project in Kali Linux or WSL, or install equivalent Windows tools and adapt the command.\n\nCommand:\necho | openssl s_client -connect google.com:443 -servername google.com 2>/dev/null | openssl x509 -noout -dates -subject -issuer 2>/dev/null\n\n[SIMULATION MODE] nmap not installed \u2014 showing simulated output.\n\nStarting Nmap 7.92 ( https://nmap.org ) \u2014 SIMULATION MODE\nNmap scan report for google.com\nHost is up (0.028s latency).\nNot shown: 993 closed ports\nPORT      STATE    SERVICE              VERSION\n443/tcp   open     https                nginx 1.18.0\n6379/tcp   open     redis                Redis key-value store\n22/tcp   open     ssh                  OpenSSH 8.4p1\n80/tcp   open     http                 nginx 1.18.0\n25/tcp   open     smtp                 Postfix smtpd\n21/tcp   open     ftp                  vsftpd 3.0.3\n110/tcp   filtered pop3                 pop3\n\nOS details: Linux 4.15 - 5.6\nNmap done: 1 IP address (1 host up) scanned in 13.98 seconds",
+  "ports": [],
+  "threats": [],
+  "timestamp": "2026-06-26 17:28:42",
+  "saved_at": "2026-06-26T17:28:42.000062"
+}

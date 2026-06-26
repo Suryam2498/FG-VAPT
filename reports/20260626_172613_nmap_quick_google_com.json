@@ -1,0 +1,57 @@
+{
+  "id": "20260626_172613_nmap_quick_google_com",
+  "tool": "nmap_quick",
+  "tool_display": "Port Scanner (Quick)",
+  "target": "google.com",
+  "output": "[SIMULATION MODE] nmap not installed \u2014 showing simulated output.\n\nStarting Nmap 7.92 ( https://nmap.org ) \u2014 SIMULATION MODE\nNmap scan report for google.com\nHost is up (0.028s latency).\nNot shown: 993 closed ports\nPORT      STATE    SERVICE              VERSION\n80/tcp   open     http                 nginx 1.18.0\n8443/tcp   open     https-alt            https-alt\n53/tcp   open     domain               ISC BIND 9.16\n25/tcp   open     smtp                 Postfix smtpd\n3389/tcp   filtered ms-wbt-server        ms-wbt-server\n110/tcp   filtered pop3                 pop3\n3306/tcp   open     mysql                MySQL 8.0.27\n\nOS details: Windows Server 2019\nNmap done: 1 IP address (1 host up) scanned in 7.39 seconds",
+  "ports": [
+    {
+      "port": 80,
+      "proto": "tcp",
+      "service": "HTTP",
+      "severity": "MEDIUM",
+      "desc": "Web server without HTTPS encryption.",
+      "fix": "Redirect HTTP to HTTPS. Install SSL certificate.",
+      "version": "nginx 1.18.0"
+    },
+    {
+      "port": 8443,
+      "proto": "tcp",
+      "service": "HTTPS-ALT",
+      "severity": "LOW",
+      "desc": "Alternate HTTPS port.",
+      "fix": "Ensure strong TLS config.",
+      "version": "https-alt"
+    },
+    {
+      "port": 53,
+      "proto": "tcp",
+      "service": "DNS",
+      "severity": "MEDIUM",
+      "desc": "DNS service. Zone transfer attacks possible.",
+      "fix": "Disable zone transfers. Use DNSSEC.",
+      "version": "ISC BIND 9.16"
+    },
+    {
+      "port": 25,
+      "proto": "tcp",
+      "service": "SMTP",
+      "severity": "MEDIUM",
+      "desc": "Mail server. Open relay risk if misconfigured.",
+      "fix": "Require SMTP auth. Use TLS. Restrict relay.",
+      "version": "Postfix smtpd"
+    },
+    {
+      "port": 3306,
+      "proto": "tcp",
+      "service": "MYSQL",
+      "severity": "HIGH",
+      "desc": "MySQL database exposed. Brute force risk.",
+      "fix": "Bind to 127.0.0.1. Block externally.",
+      "version": "MySQL 8.0.27"
+    }
+  ],
+  "threats": [],
+  "timestamp": "2026-06-26 17:26:13",
+  "saved_at": "2026-06-26T17:26:13.066444"
+}

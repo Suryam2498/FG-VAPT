@@ -1,0 +1,11 @@
+{
+  "id": "20260626_172848_web_dirscan_google_com",
+  "tool": "web_dirscan",
+  "tool_display": "Directory Enumeration",
+  "target": "google.com",
+  "output": "This scan command is written for Kali/Linux shell tools and is not supported in native Windows.\nRecommended: run this project in Kali Linux or WSL, or install equivalent Windows tools and adapt the command.\n\nCommand:\ngobuster dir -u https://google.com -w /usr/share/wordlists/dirb/common.txt -t 30 -q 2>/dev/null",
+  "ports": [],
+  "threats": [],
+  "timestamp": "2026-06-26 17:28:48",
+  "saved_at": "2026-06-26T17:28:48.177400"
+}
